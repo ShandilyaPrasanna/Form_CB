@@ -1,7 +1,8 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {UpdateUser} from './../actions/UpdateUser';
+import {UpdatePersonalInfo} from './../actions/Actions';
 
 class PersonalInfo extends React.Component{
 	
@@ -24,17 +25,21 @@ class PersonalInfo extends React.Component{
 	this.setState({[e.target.name]:e.target.value});
      }
 
+     onNext(e){
+
+      hashHistory.push('/AddressForm');
+     }
+
     onSubmit(e){
      e.preventDefault();
-     this.props.UpdateUser(this.state)
-
+     this.props.UpdatePersonalInfo(this.state)
     }
 
 	render(){
 	
 		return(
 <form>
-<h1> Register Here ........</h1>
+<h1> Personal Details ........</h1>
 
 <div className="form-group">
  <label className="control-label">First Name</label>
@@ -90,7 +95,7 @@ class PersonalInfo extends React.Component{
 
  <div className="form-group">
  <button className="btn btn-primary btn-lg pull-left" onClick={this.onSubmit}>Save</button>
- <button className="btn btn-primary btn-lg pull-right" onClick={this.onSubmit}>Next</button>
+ <button className="btn btn-primary btn-lg pull-right" onClick={this.onNext}>Next</button>
  </div>
 
 </form>
@@ -109,6 +114,6 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
 
-	return bindActionCreators({UpdateUser:UpdateUser},dispatch)
+	return bindActionCreators({UpdatePersonalInfo:UpdatePersonalInfo},dispatch)
 }
 export default connect(mapStateToProps,matchDispatchToProps)(PersonalInfo);
