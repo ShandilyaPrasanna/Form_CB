@@ -7,6 +7,8 @@ import allReducer from'./reducers/Index';
 import {Provider} from 'react-redux';
 import AddressForm from './components/AddressForm';
 import PersonalInfo from './components/PersonalInfo';   
+import EducationDetail from './components/EducationDetail';
+import ExperienceForm from './components/ExperienceForm';
 
 
 const store=createStore(allReducer);
@@ -34,6 +36,8 @@ Reactdom.render(
  <Route path="/" component={Main} >
  <Route path="/PersonalInfo" component={PersonalInfo}></Route>
  <Route path="/AddressForm" component={AddressForm}></Route>
+ <Route path="/EducationDetail" component={EducationDetail}></Route>
+ <Route path="/Experience" component={ExperienceForm}></Route>
  </Route>
 </Router>
 </Provider>

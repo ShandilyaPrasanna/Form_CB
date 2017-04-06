@@ -20,6 +20,12 @@ render:function(){
     <li>
     <Link to="/AddressForm">Address</Link>
     </li>
+    <li>
+    <Link to="/EducationDetail">Education Detail</Link>
+    </li>
+    <li>
+    <Link to="/Experience">Experience</Link>
+    </li>
     </ul>
     </div>
 

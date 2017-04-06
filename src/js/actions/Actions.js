@@ -5,12 +5,30 @@ export function UpdatePersonalInfo(userData){
 			type:"Update_User",
 			payload:userData
 		};
-	}
+	};
 
-export function AddressInfo(userData){
-       console.log("UpdateUser",userData);	
+export function UpdateAddressInfo(userData){
+       console.log("UpdateAddressInfo",userData);	
 		return {
-			type:"Update_User",
+			type:"Update_Address",
+			payload:userData
+		};
+	};
+
+export function Add_Edu(userData){
+      
+
+		return {
+			type:"Edu_Update",
+			payload:userData
+		};
+	};
+
+	export function Add_Exp(userData){
+      
+
+		return {
+			type:"Exp_Update",
 			payload:userData
 		};
 	}

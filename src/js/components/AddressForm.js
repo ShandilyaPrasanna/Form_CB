@@ -2,6 +2,7 @@ import React from 'react';
 import {hashHistory} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {UpdateAddressInfo} from './../actions/Actions'
 
 
 class AddressInfo extends React.Component{
@@ -34,8 +35,13 @@ class AddressInfo extends React.Component{
 
     onSubmit(e){
      e.preventDefault();
-     this.props.UpdateUser(this.state)
+     this.props.UpdateAddressInfo(this.state)
     }
+
+    onNext(e){
+
+      hashHistory.push('/EducationDetail');
+     }
 
 	render(){
 	
@@ -48,8 +54,8 @@ class AddressInfo extends React.Component{
  <label className="control-label">Street 1</label>
  <input 
  type="text" 
- value={this.state.PreAdd_Street_Two}
- name="PreAdd_Street_Two" 
+ value={this.state.PreAdd_Street_One}
+ name="PreAdd_Street_One" 
  className="form-control"
  onChange={this.onChange}/>
  </div>
@@ -103,8 +109,8 @@ class AddressInfo extends React.Component{
  <label className="control-label">Street 1</label>
  <input 
  type="text" 
- value={this.state.PmtAdd_Street_Two}
- name="PmtAdd_Street_Two" 
+ value={this.state.PmtAdd_Street_One}
+ name="PmtAdd_Street_One" 
  className="form-control"
  onChange={this.onChange}/>
  </div>
@@ -154,7 +160,7 @@ class AddressInfo extends React.Component{
 
  <div className="form-group">
  <button className="btn btn-primary btn-lg pull-left" onClick={this.onSubmit}>Save</button>
- <button className="btn btn-primary btn-lg pull-right" >Next</button>
+ <button className="btn btn-primary btn-lg pull-right" onClick={this.onNext} >Next</button>
  </div>
 
 </form>
@@ -171,8 +177,8 @@ function mapStateToProps(state){
 	}
 }
 
-//function matchDispatchToProps(dispatch){
-//
-//	return bindActionCreators({UpdateUser:UpdateUser},dispatch)
-//}
-export default connect(mapStateToProps)(AddressInfo);
+function matchDispatchToProps(dispatch){
+
+	return bindActionCreators({UpdateAddressInfo:UpdateAddressInfo},dispatch)
+}
+export default connect(mapStateToProps,matchDispatchToProps)(AddressInfo);
