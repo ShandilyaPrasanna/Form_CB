@@ -9,7 +9,7 @@ return user={
     	PreAdd_Street_One:action.payload.PreAdd_Street_One,
        	PreAdd_Street_Two:action.payload.PreAdd_Street_Two,
        	PreAdd_City:action.payload.PreAdd_City,
-       	PreAdd_State:action.payload.PmtAdd_State,
+       	PreAdd_State:action.payload.PreAdd_State,
        	PreAdd_Pin:action.payload.PreAdd_Pin,
 
        	PmtAdd_Street_One:action.payload.PmtAdd_Street_One,

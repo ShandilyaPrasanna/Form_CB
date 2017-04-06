@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Displayexp from './Displayexp';
 import DisplayEdu from './DisplayEdu';
-
+import DisplayAdd from './DisplayAdd';
+import DisplayPersonal from './DisplayPersonal';
 
 class Profile extends React.Component{
 
@@ -64,9 +65,9 @@ var temp3=temp1.map(function(arry){
         </h4>
       </div>
       <div id="collapse1" className="panel-collapse collapse in">
-        <div className="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div className="panel-body">
+<DisplayPersonal arr={this.props.UserInfo}/>
+        </div>
       </div>
     </div>
   
@@ -78,9 +79,10 @@ var temp3=temp1.map(function(arry){
         </h4>
       </div>
       <div id="collapse2" className="panel-collapse collapse">
-        <div className="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div className="panel-body">
+
+<DisplayAdd arr={this.props.AddressInfo} />
+        </div>
       </div>
     </div>
   
