@@ -9,6 +9,7 @@ import AddressForm from './components/AddressForm';
 import PersonalInfo from './components/PersonalInfo';   
 import EducationDetail from './components/EducationDetail';
 import ExperienceForm from './components/ExperienceForm';
+import Profile from './components/Profile';
 
 
 const store=createStore(allReducer);
@@ -37,6 +38,7 @@ Reactdom.render(
  <Route path="/PersonalInfo" component={PersonalInfo}></Route>
  <Route path="/AddressForm" component={AddressForm}></Route>
  <Route path="/EducationDetail" component={EducationDetail}></Route>
+ <Route path="/Profile" component={Profile}></Route>
  <Route path="/Experience" component={ExperienceForm}></Route>
  </Route>
 </Router>

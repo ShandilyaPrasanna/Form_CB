@@ -58,13 +58,17 @@ this.setState({isLoading:true});
     
 }}
 
+profile(e){
+	e.preventDefault();
+	hashHistory.push('/Profile');
+}
 
 	render(){
 	
 		return(
 <form>
 <h1> Experience ........</h1>
-
+<button className="btn btn-primary btn-md pull-right" onClick={this.onSubmit}>Add</button>
 <br></br>
 <hr></hr>
 
@@ -95,7 +99,8 @@ this.setState({isLoading:true});
 
  <div className="form-group">
  <button className="btn btn-primary btn-lg pull-left" disabled={this.state.isLoading} onClick={this.onSubmit}>Save</button>
- <button className="btn btn-primary btn-lg pull-right" onClick={this.onSubmit}>Add</button>
+ <button className="btn btn-primary btn-lg pull-right" disabled={!this.state.isLoading} onClick={this.profile}>View Profile</button>
+ 
  
  
  </div>

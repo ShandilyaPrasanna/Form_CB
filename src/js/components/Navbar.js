@@ -11,9 +11,7 @@ render:function(){
     <div className="container-fluid">
     <ul className="nav navbar-nav">
 
-    <li>
-    <Link to="/">Home</Link>
-    </li>
+    
     <li>
     <Link to="/PersonalInfo">PersonalInfo</Link>
     </li>
