@@ -1,12 +1,25 @@
 import React from 'react';
-import PersonalInfo from './PersonalInfo'
+import {hashHistory} from 'react-router';
 
 class App extends React.Component{
-	render(){
-		return(
-<PersonalInfo />
-			);
-	}
+
+handleClick(){
+
+hashHistory.push('/PersonalInfo');
+
 }
 
-export default App; 
+render(){
+	return(
+<div>
+<br></br>
+<button type="button" class="btn btn-warning btn-block" onClick={this.handleClick}>ENTER YOUR DETAILS HERE</button>
+<hr></hr>
+</div>
+
+		);
+}
+
+
+}
+export default App;

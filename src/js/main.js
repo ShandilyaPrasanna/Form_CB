@@ -10,6 +10,7 @@ import PersonalInfo from './components/PersonalInfo';
 import EducationDetail from './components/EducationDetail';
 import ExperienceForm from './components/ExperienceForm';
 import Profile from './components/Profile';
+import App from './components/App';
 
 
 const store=createStore(allReducer);

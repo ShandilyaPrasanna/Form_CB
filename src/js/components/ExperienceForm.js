@@ -1,8 +1,10 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 import {connect} from 'react-redux';
+import classnames from 'classnames';
 import {bindActionCreators} from 'redux';
 import {Add_Exp} from './../actions/Actions';
+import validateInput from './../Validator/ValidatorExp';
 
 class ExperienceDetail extends React.Component{
 		constructor(props){
@@ -13,19 +15,23 @@ class ExperienceDetail extends React.Component{
        			count:0,
        	cpyName:'',
        	exp:'',
-       	isLoading:false
+       	isLoading:false,
+        errors:{},
        		}
-       	}
+        }
+       	
        	else
        	{
        		this.state={
        			count:this.props.ExpInfo.count,
        	cpyName:this.props.ExpInfo.cpyName,
        	exp:this.props.ExpInfo.exp,
-       	isLoading:false
+       	isLoading:false,
+        errors:{},
        		}
+        }
 
-       	}
+       	
      
      
       this.onChange=this.onChange.bind(this);
@@ -39,6 +45,9 @@ class ExperienceDetail extends React.Component{
 
     onSubmit(e){
     e.preventDefault();
+     if(this.isValid())
+{
+this.setState({errors:{}});
      if(this.state.isLoading==true)
      {
      this.setState({
@@ -46,7 +55,8 @@ class ExperienceDetail extends React.Component{
         
      	cpyName:'',
        	exp:'',
-       	isLoading:false
+       	isLoading:false,
+        errors:{}
  });	
  
      	
@@ -56,7 +66,19 @@ this.setState({isLoading:true});
 
      this.props.Add_Exp(this.state)
     
-}}
+}}}
+
+isValid(){
+
+const {errors,isValid}=validateInput(this.state);
+  if(!isValid)
+  {
+    console.log("error");
+    this.setState({errors});
+  }
+return isValid;
+}
+
 
 profile(e){
 	e.preventDefault();
@@ -64,17 +86,21 @@ profile(e){
 }
 
 	render(){
-	
+	var error=this.state.errors
 		return(
+      <div className="row">
+      <div className="col-sm-3">
+      </div>
+      <div className="col-sm-6">
 <form>
 <h1> Experience ........</h1>
-<button className="btn btn-primary btn-md pull-right" onClick={this.onSubmit}>Add</button>
+<button className="btn btn-primary btn-md pull-right" disabled={!this.state.isLoading} onClick={this.onSubmit}>Add</button>
 <br></br>
 <hr></hr>
 
 
 
- <div className="form-group">
+ <div className={classnames("form-group",{'has-error':error.cpyName})}>
  <label className="control-label">Company Name</label>
  <input 
  type="text" 
@@ -82,10 +108,11 @@ profile(e){
  name="cpyName" 
  className="form-control"
  onChange={this.onChange}/>
+ {error.cpyName && <span className="help-block">{error.cpyName}</span>}
  </div>
 
 
-<div className="form-group">
+<div className={classnames("form-group",{'has-error':error.exp})}>
  <label className="control-label">Total Experience(in Years)</label>
  <input 
  value={this.state.exp}
@@ -93,6 +120,7 @@ profile(e){
  name="exp" 
  className="form-control"
  onChange={this.onChange}/>
+ {error.exp && <span className="help-block">{error.exp}</span>}
  </div>
 
 
@@ -106,7 +134,8 @@ profile(e){
  </div>
 
 </form>
-
+</div>
+</div>
 
 
 			);

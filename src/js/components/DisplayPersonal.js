@@ -16,7 +16,7 @@ render(){
     <th>Father Name</th> 
     <th>Mother Name</th>
     <th>Date Of Birth</th>
-    <th></th>
+    
   </tr>
   <tr>
     <td>{this.props.arr.firstName}</td>
@@ -24,7 +24,7 @@ render(){
     <td>{this.props.arr.fatherName}</td>
     <td>{this.props.arr.motherName}</td>
     <td>{this.props.arr.DOB}</td>
-    <td><center><button className="btn btn-danger btn-sm" >Edit</button></center></td>
+   
   </tr>
   </table>
 <hr></hr>

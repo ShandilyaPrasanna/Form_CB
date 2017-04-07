@@ -1,33 +1,29 @@
- var React=require('react');
+import React from 'react';
+import {hashHistory} from 'react-router';
+ 
 
-var {Link}=require('react-router');
 
-var Navbar=React.createClass({
-  
-  
-render:function(){
-  return(
-    
-    <div className="container-fluid">
-    <ul className="nav navbar-nav">
+class Navbar extends React.Component{
 
-    
-    <li>
-    <Link to="/PersonalInfo">PersonalInfo</Link>
-    </li>
-    <li>
-    <Link to="/AddressForm">Address</Link>
-    </li>
-    <li>
-    <Link to="/EducationDetail">Education Detail</Link>
-    </li>
-    <li>
-    <Link to="/Experience">Experience</Link>
-    </li>
-    </ul>
-    </div>
+handleClick(){
 
-    )
+hashHistory.push('/PersonalInfo');
+
 }
-});
+  
+render(){
+  return(
+<div>    
+    <div className="container-fluid">
+    <div className="nav navbar-nav">
+    <a href="#" class="navbar-brand" ><img src="/../../images/logo.png" alt="your logo"></img></a>
+    </div>
+</div>
+<br></br>
+<button type="button" class="btn btn-warning btn-block" onClick={this.handleClick}>ENTER YOUR DETAILS HERE</button>
+<hr></hr>
+</div>
+    );
+}
+}
     module.exports=Navbar;

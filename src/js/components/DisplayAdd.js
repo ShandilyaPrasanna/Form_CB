@@ -16,7 +16,7 @@ render(){
     <th>City</th> 
     <th>State</th>
     <th>Zip</th>
-    <th></th>
+    
   </tr>
   <tr>
     <td>{this.props.arr.PreAdd_Street_One}</td>
@@ -24,7 +24,7 @@ render(){
     <td>{this.props.arr.PreAdd_City}</td>
     <td>{this.props.arr.PreAdd_State}</td>
     <td>{this.props.arr.PreAdd_Pin}</td>
-    <td><center><button className="btn btn-danger btn-sm" >Edit</button></center></td>
+   
   </tr>
   </table>
 <hr></hr>
@@ -36,7 +36,7 @@ render(){
     <th>City</th> 
     <th>State</th>
     <th>Zip</th>
-    <th></th>
+    
   </tr>
   <tr>
     <td>{this.props.arr.PmtAdd_Street_One}</td>
@@ -44,7 +44,7 @@ render(){
     <td>{this.props.arr.PmtAdd_City}</td>
     <td>{this.props.arr.PmtAdd_State}</td>
     <td>{this.props.arr.PmtAdd_Pin}</td>
-    <td><center><button className="btn btn-danger btn-sm" >Edit</button></center></td>
+   
   </tr>
   </table>
 <hr></hr>

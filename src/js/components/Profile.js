@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import Displayexp from './Displayexp';
 import DisplayEdu from './DisplayEdu';
 import DisplayAdd from './DisplayAdd';
