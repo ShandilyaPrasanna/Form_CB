@@ -9,6 +9,7 @@ const allReducer=combineReducers({
 	AddressInfo:AddressInfo,
 	EduInfo:EduInfo,
 	ExpInfo:ExpInfo
+	
 
 });
 

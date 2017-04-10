@@ -12,16 +12,18 @@ class ExperienceDetail extends React.Component{
        
        	if(this.props.ExpInfo===null){
        		this.state={
-       			count:0,
+       			count:-1,
        	cpyName:'',
        	exp:'',
        	isLoading:false,
         errors:{},
        		}
+         
         }
        	
        	else
        	{
+          
        		this.state={
        			count:this.props.ExpInfo.count,
        	cpyName:this.props.ExpInfo.cpyName,

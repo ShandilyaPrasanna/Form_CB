@@ -12,7 +12,7 @@ class EducationDetail extends React.Component{
        
        	if(this.props.EduInfo===null){
        		this.state={
-       			count:0,
+       			count:-1,
        			examType:'',
        	eduBoard:'',
        	percentage:'',

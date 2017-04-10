@@ -32,3 +32,12 @@ export function Add_Edu(userData){
 			payload:userData
 		};
 	}
+
+	export function Edit_Exp(userData){
+      console.log("inside Action Edit payload",userData);
+
+		return {
+			type:"Exp_Edit",
+			payload:userData
+		};
+	}
