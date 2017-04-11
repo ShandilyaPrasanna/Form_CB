@@ -58,7 +58,7 @@ render(){
 
 <div>
 <h2> Address...</h2>
-<td><center><button className="btn btn-primary btn-sm pull-right" onClick={this.onEdit.bind(this)}>Edit</button></center></td>
+<center><button className="btn btn-primary btn-sm pull-right" onClick={this.onEdit.bind(this)}>Edit</button></center>
 <h2>Present Address...</h2>
 <table id="t01">
   <tr>
