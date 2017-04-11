@@ -1,8 +1,6 @@
 import React from 'react';
-import {bindActionCreators} from 'redux';
-import {Edit_Exp} from './../actions/Actions';
-import {connect} from 'react-redux';
-import {Edit_Form_Exp} from './Edit_Form_Exp';
+
+import Edit_Form_Exp from './Edit_Form_Exp';
 
 
 class Displayexp extends React.Component{
@@ -10,17 +8,35 @@ class Displayexp extends React.Component{
 constructor(props){
        super(props);
        this.state={
+        cpyName:this.props.arr.cpyName,
+        exp:this.props.arr.exp,
 temp:'',
+isloading:true,
        }
      }
 onEdit(e){
   e.preventDefault();
-var temp1=Edit_Form_Exp(this.props.arr);
-this.setState({temp:temp1});
+  if(this.state.isloading)
+  {
+var temp1=<Edit_Form_Exp arr={this.props.arr} />
+this.setState({
+  temp:temp1,
+  isloading:false,
+});
 }
+else
+{
+  this.setState({
+  temp:'',
+  isloading:true,
+});
+
+}
+}
+
 render(){
   
-  this.props.arr.count++;
+  
 console.log("Inside Display",this.props.arr);
 	return(
 
@@ -37,7 +53,7 @@ console.log("Inside Display",this.props.arr);
   <tr>
     <td>{this.props.arr.cpyName}</td>
     <td>{this.props.arr.exp}</td> 
-     <td><button className="btn btn-primary btn-sm" onClick={this.onEdit.bind(this)}>Edit</button></td>
+     <td><center><button className="btn btn-primary btn-sm" onClick={this.onEdit.bind(this)}>Edit</button></center></td>
   
   </tr>
   
@@ -50,8 +66,4 @@ console.log("Inside Display",this.props.arr);
 }
 }
 
-function matchDispatchToProps(dispatch){
-
-  return bindActionCreators({Edit_Exp:Edit_Exp},dispatch)
-}
-export default connect((state)=>{return{}},matchDispatchToProps)(Displayexp);
+export default Displayexp;

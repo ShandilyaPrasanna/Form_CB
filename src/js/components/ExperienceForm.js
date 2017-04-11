@@ -12,7 +12,7 @@ class ExperienceDetail extends React.Component{
        
        	if(this.props.ExpInfo===null){
        		this.state={
-       			count:-1,
+       			count:0,
        	cpyName:'',
        	exp:'',
        	isLoading:false,
