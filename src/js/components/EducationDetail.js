@@ -12,7 +12,7 @@ class EducationDetail extends React.Component{
        
        	if(this.props.EduInfo===null){
        		this.state={
-       			count:-1,
+       			count:0,
        			examType:'',
        	eduBoard:'',
        	percentage:'',
@@ -57,10 +57,11 @@ return isValid;
 	this.setState({[e.target.name]:e.target.value});
      }
 
-     onNext(e){
+onNext(e){
 
       hashHistory.push('/Experience');
      }
+
 
     onSubmit(e){
     e.preventDefault();

@@ -13,6 +13,7 @@ class Profile extends React.Component{
        super(props);
        		this.state={
        			ExpInfo:this.props.ExpInfo,
+            EduInfo:this.props.EduInfo,
        		}
        	}
 
@@ -139,8 +140,5 @@ console.log("Check",state.ExpInfo);
 	}
 }
 
-//function matchDispatchToProps(dispatch){
-
-//	return bindActionCreators({Add_Exp:Add_Exp},dispatch)}
 
 export default connect(mapStateToProps)(Profile);

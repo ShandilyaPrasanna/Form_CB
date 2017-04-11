@@ -41,3 +41,14 @@ export function Add_Edu(userData){
 			payload:userData
 		};
 	}
+
+
+
+	export function Edit_Edu(userData){
+      console.log("inside Action Edit payload",userData);
+
+		return {
+			type:"Edu_Edit",
+			payload:userData
+		};
+	}

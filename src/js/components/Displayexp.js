@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Edit_Form_Exp from './Edit_Form_Exp';
+import Edit_Form_exp from './Edit_Form_Exp';
 
 
 class Displayexp extends React.Component{
@@ -14,11 +14,12 @@ temp:'',
 isloading:true,
        }
      }
+
 onEdit(e){
   e.preventDefault();
   if(this.state.isloading)
   {
-var temp1=<Edit_Form_Exp arr={this.props.arr} />
+var temp1=<Edit_Form_exp arr={this.props.arr} />
 this.setState({
   temp:temp1,
   isloading:false,
@@ -60,6 +61,7 @@ console.log("Inside Display",this.props.arr);
   </table>
 <hr></hr>
 {this.state.temp}
+<hr></hr>
   </div>
 
 		);
